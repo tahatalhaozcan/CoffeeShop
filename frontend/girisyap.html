@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="angular.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="giris.css" rel="stylesheet" />
+
+     <title>TCS- Giriş Yap</title>
+</head>
+<body ng-app="kahveci" ng-controller="girisCtrl">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <form>
+                <input type="text" ng-model="pkad" id="login" class="fadeIn second" name="login" placeholder="Kullanıcı Adı">
+                <input type="text" ng-model="psfire" id="password" class="fadeIn third" name="login" placeholder="Şifre">
+                <button class="btn btn-primary" type="submit" ng-click="girisyap(pkad,psfire)">Giriş Yap</button>
+                <button class="btn btn-primary" type="submit"><a href="kayit.html">Kayıt Ol</a></button>
+                                  
+            </form>
+            <div id="formFooter">
+                <a class="underlineHover" href="#">TUTKUN COFFEE SHOP</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

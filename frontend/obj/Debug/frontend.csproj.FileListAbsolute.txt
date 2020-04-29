@@ -1,0 +1,68 @@
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\csc.exe
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\csc.exe.config
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\csc.rsp
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\csi.exe
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\csi.rsp
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\System.AppContext.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\vbc.exe
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\vbc.exe.config
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\vbc.rsp
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\VBCSCompiler.exe
+C:\Users\tahat\Desktop\kahveci\frontend\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\tahat\Desktop\kahveci\frontend\bin\frontend.dll.config
+C:\Users\tahat\Desktop\kahveci\frontend\bin\frontend.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\frontend.pdb
+C:\Users\tahat\Desktop\kahveci\frontend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\tahat\Desktop\kahveci\frontend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\tahat\Desktop\kahveci\frontend\obj\Debug\frontend.csprojResolveAssemblyReference.cache
+C:\Users\tahat\Desktop\kahveci\frontend\obj\Debug\frontend.dll
+C:\Users\tahat\Desktop\kahveci\frontend\obj\Debug\frontend.pdb
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\csc.exe
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\csc.exe.config
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\csc.rsp
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\csi.exe
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\csi.rsp
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\System.AppContext.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\vbc.exe
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\vbc.exe.config
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\vbc.rsp
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\VBCSCompiler.exe
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\frontend.dll.config
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\frontend.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\frontend.pdb
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\obj\Debug\frontend.csprojResolveAssemblyReference.cache
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\obj\Debug\frontend.dll
+C:\Users\tahat\Desktop\kahveci - Kopya\frontend\obj\Debug\frontend.pdb

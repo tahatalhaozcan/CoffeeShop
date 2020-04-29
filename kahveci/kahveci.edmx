@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tutkunFastFoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="masa">
+          <Key>
+            <PropertyRef Name="masaID" />
+          </Key>
+          <Property Name="masaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="masaNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="personelID" />
+          </Key>
+          <Property Name="personelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="padsoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pkad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="psfire" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="siparis">
+          <Key>
+            <PropertyRef Name="siparisID" />
+          </Key>
+          <Property Name="siparisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="masaID" Type="int" Nullable="false" />
+          <Property Name="urunID" Type="int" Nullable="false" />
+          <Property Name="personelID" Type="int" Nullable="false" />
+          <Property Name="adet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="urun">
+          <Key>
+            <PropertyRef Name="urunID" />
+          </Key>
+          <Property Name="urunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urunad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="urunfiyat" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_siparis_masa">
+          <End Role="masa" Type="Self.masa" Multiplicity="1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="masa">
+              <PropertyRef Name="masaID" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="masaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparis_personel">
+          <End Role="personel" Type="Self.personel" Multiplicity="1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personelID" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="personelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparis_urun">
+          <End Role="urun" Type="Self.urun" Multiplicity="1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urun">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tutkunFastFoodModelStoreContainer">
+          <EntitySet Name="masa" EntityType="Self.masa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personel" EntityType="Self.personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="siparis" EntityType="Self.siparis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urun" EntityType="Self.urun" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_siparis_masa" Association="Self.FK_siparis_masa">
+            <End Role="masa" EntitySet="masa" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparis_personel" Association="Self.FK_siparis_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparis_urun" Association="Self.FK_siparis_urun">
+            <End Role="urun" EntitySet="urun" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tutkunFastFoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="masa">
+          <Key>
+            <PropertyRef Name="masaID" />
+          </Key>
+          <Property Name="masaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="masaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_masa" FromRole="masa" ToRole="siparis" />
+        </EntityType>
+        <EntityType Name="personel">
+          <Key>
+            <PropertyRef Name="personelID" />
+          </Key>
+          <Property Name="personelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="padsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pkad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="psfire" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_personel" FromRole="personel" ToRole="siparis" />
+        </EntityType>
+        <EntityType Name="siparis">
+          <Key>
+            <PropertyRef Name="siparisID" />
+          </Key>
+          <Property Name="siparisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="masaID" Type="Int32" Nullable="false" />
+          <Property Name="urunID" Type="Int32" Nullable="false" />
+          <Property Name="personelID" Type="Int32" Nullable="false" />
+          <Property Name="adet" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="masa" Relationship="Self.FK_siparis_masa" FromRole="siparis" ToRole="masa" />
+          <NavigationProperty Name="personel" Relationship="Self.FK_siparis_personel" FromRole="siparis" ToRole="personel" />
+          <NavigationProperty Name="urun" Relationship="Self.FK_siparis_urun" FromRole="siparis" ToRole="urun" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="urun">
+          <Key>
+            <PropertyRef Name="urunID" />
+          </Key>
+          <Property Name="urunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urunad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="urunfiyat" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_urun" FromRole="urun" ToRole="siparis" />
+        </EntityType>
+        <Association Name="FK_siparis_masa">
+          <End Role="masa" Type="Self.masa" Multiplicity="1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="masa">
+              <PropertyRef Name="masaID" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="masaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparis_personel">
+          <End Role="personel" Type="Self.personel" Multiplicity="1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="personel">
+              <PropertyRef Name="personelID" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="personelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_siparis_urun">
+          <End Role="urun" Type="Self.urun" Multiplicity="1" />
+          <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="urun">
+              <PropertyRef Name="urunID" />
+            </Principal>
+            <Dependent Role="siparis">
+              <PropertyRef Name="urunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tutkunFastFoodEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="masa" EntityType="Self.masa" />
+          <EntitySet Name="personel" EntityType="Self.personel" />
+          <EntitySet Name="siparis" EntityType="Self.siparis" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="urun" EntityType="Self.urun" />
+          <AssociationSet Name="FK_siparis_masa" Association="Self.FK_siparis_masa">
+            <End Role="masa" EntitySet="masa" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparis_personel" Association="Self.FK_siparis_personel">
+            <End Role="personel" EntitySet="personel" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_siparis_urun" Association="Self.FK_siparis_urun">
+            <End Role="urun" EntitySet="urun" />
+            <End Role="siparis" EntitySet="siparis" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tutkunFastFoodModelStoreContainer" CdmEntityContainer="tutkunFastFoodEntities">
+          <EntitySetMapping Name="masa">
+            <EntityTypeMapping TypeName="tutkunFastFoodModel.masa">
+              <MappingFragment StoreEntitySet="masa">
+                <ScalarProperty Name="masaID" ColumnName="masaID" />
+                <ScalarProperty Name="masaNo" ColumnName="masaNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personel">
+            <EntityTypeMapping TypeName="tutkunFastFoodModel.personel">
+              <MappingFragment StoreEntitySet="personel">
+                <ScalarProperty Name="personelID" ColumnName="personelID" />
+                <ScalarProperty Name="padsoyad" ColumnName="padsoyad" />
+                <ScalarProperty Name="pkad" ColumnName="pkad" />
+                <ScalarProperty Name="psfire" ColumnName="psfire" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siparis">
+            <EntityTypeMapping TypeName="tutkunFastFoodModel.siparis">
+              <MappingFragment StoreEntitySet="siparis">
+                <ScalarProperty Name="siparisID" ColumnName="siparisID" />
+                <ScalarProperty Name="masaID" ColumnName="masaID" />
+                <ScalarProperty Name="urunID" ColumnName="urunID" />
+                <ScalarProperty Name="personelID" ColumnName="personelID" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="tutkunFastFoodModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urun">
+            <EntityTypeMapping TypeName="tutkunFastFoodModel.urun">
+              <MappingFragment StoreEntitySet="urun">
+                <ScalarProperty Name="urunID" ColumnName="urunID" />
+                <ScalarProperty Name="urunad" ColumnName="urunad" />
+                <ScalarProperty Name="urunfiyat" ColumnName="urunfiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

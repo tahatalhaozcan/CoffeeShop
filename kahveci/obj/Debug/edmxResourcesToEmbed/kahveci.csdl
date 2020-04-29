@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tutkunFastFoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="masa">
+    <Key>
+      <PropertyRef Name="masaID" />
+    </Key>
+    <Property Name="masaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="masaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_masa" FromRole="masa" ToRole="siparis" />
+  </EntityType>
+  <EntityType Name="personel">
+    <Key>
+      <PropertyRef Name="personelID" />
+    </Key>
+    <Property Name="personelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="padsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pkad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="psfire" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_personel" FromRole="personel" ToRole="siparis" />
+  </EntityType>
+  <EntityType Name="siparis">
+    <Key>
+      <PropertyRef Name="siparisID" />
+    </Key>
+    <Property Name="siparisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="masaID" Type="Int32" Nullable="false" />
+    <Property Name="urunID" Type="Int32" Nullable="false" />
+    <Property Name="personelID" Type="Int32" Nullable="false" />
+    <Property Name="adet" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="masa" Relationship="Self.FK_siparis_masa" FromRole="siparis" ToRole="masa" />
+    <NavigationProperty Name="personel" Relationship="Self.FK_siparis_personel" FromRole="siparis" ToRole="personel" />
+    <NavigationProperty Name="urun" Relationship="Self.FK_siparis_urun" FromRole="siparis" ToRole="urun" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="urun">
+    <Key>
+      <PropertyRef Name="urunID" />
+    </Key>
+    <Property Name="urunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="urunad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="urunfiyat" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="siparis" Relationship="Self.FK_siparis_urun" FromRole="urun" ToRole="siparis" />
+  </EntityType>
+  <Association Name="FK_siparis_masa">
+    <End Role="masa" Type="Self.masa" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="masa">
+        <PropertyRef Name="masaID" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="masaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_siparis_personel">
+    <End Role="personel" Type="Self.personel" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="personel">
+        <PropertyRef Name="personelID" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="personelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_siparis_urun">
+    <End Role="urun" Type="Self.urun" Multiplicity="1" />
+    <End Role="siparis" Type="Self.siparis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="urun">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="siparis">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="tutkunFastFoodEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="masa" EntityType="Self.masa" />
+    <EntitySet Name="personel" EntityType="Self.personel" />
+    <EntitySet Name="siparis" EntityType="Self.siparis" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="urun" EntityType="Self.urun" />
+    <AssociationSet Name="FK_siparis_masa" Association="Self.FK_siparis_masa">
+      <End Role="masa" EntitySet="masa" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_siparis_personel" Association="Self.FK_siparis_personel">
+      <End Role="personel" EntitySet="personel" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_siparis_urun" Association="Self.FK_siparis_urun">
+      <End Role="urun" EntitySet="urun" />
+      <End Role="siparis" EntitySet="siparis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

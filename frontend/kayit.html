@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TCF-Giriş</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+        <script src="angular.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <title>TCS-Personel Kayıt</title>
+    </head>
+    <body ng-app="kahveci" ng-controller="kayitCtrl">
+        <div>
+                <form class="form-signin">
+                <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                <h1 class="h3 mb-3 font-weight-normal">Yeni Personel</h1>
+                <label for="inputEmail" class="sr-only">Personel Ad Soyad:</label>
+                <input type="text" ng-model="personel.padsoyad" class="form-control" placeholder="Adınız Soyadınız" required="" autofocus="">
+                <label for="inputPassword" class="sr-only">Kullanıcı Adı Giriniz:</label>
+                <input type="text" ng-model="personel.pkad" class="form-control" placeholder="Kullanıcı Adı" required="">
+                <label for="inputPassword" class="sr-only">Şifre Belirleyiniz</label>
+                <input type="password" ng-model="personel.psfire" class="form-control" placeholder="Şifre" required="">
+                <div class="checkbox mb-3">
+                   
+               </div>
+                <button class="btn btn-lg btn-primary btn-block" ng-click="personelekle(personel)" type="submit">Kayıt<button>
+                
+                
+            </form>
+
+        </div>
+
+
+    </body>
+</html>
+
+</body>
+</html>

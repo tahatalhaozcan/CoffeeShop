@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tutkunFastFoodModelStoreContainer" CdmEntityContainer="tutkunFastFoodEntities">
+    <EntitySetMapping Name="masa">
+      <EntityTypeMapping TypeName="tutkunFastFoodModel.masa">
+        <MappingFragment StoreEntitySet="masa">
+          <ScalarProperty Name="masaID" ColumnName="masaID" />
+          <ScalarProperty Name="masaNo" ColumnName="masaNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personel">
+      <EntityTypeMapping TypeName="tutkunFastFoodModel.personel">
+        <MappingFragment StoreEntitySet="personel">
+          <ScalarProperty Name="personelID" ColumnName="personelID" />
+          <ScalarProperty Name="padsoyad" ColumnName="padsoyad" />
+          <ScalarProperty Name="pkad" ColumnName="pkad" />
+          <ScalarProperty Name="psfire" ColumnName="psfire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="siparis">
+      <EntityTypeMapping TypeName="tutkunFastFoodModel.siparis">
+        <MappingFragment StoreEntitySet="siparis">
+          <ScalarProperty Name="siparisID" ColumnName="siparisID" />
+          <ScalarProperty Name="masaID" ColumnName="masaID" />
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="personelID" ColumnName="personelID" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="tutkunFastFoodModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="urun">
+      <EntityTypeMapping TypeName="tutkunFastFoodModel.urun">
+        <MappingFragment StoreEntitySet="urun">
+          <ScalarProperty Name="urunID" ColumnName="urunID" />
+          <ScalarProperty Name="urunad" ColumnName="urunad" />
+          <ScalarProperty Name="urunfiyat" ColumnName="urunfiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

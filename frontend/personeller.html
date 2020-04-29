@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="personeljs.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>TCS-Personeller</title>
+</head>
+<body ng-app="kahveci" ng-controller="personelCtrl">
+    <div>
+        <h3>Personeller</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Personel</th>
+                    <th>İşlem</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in personeller">
+                    <td>{{x.padsoyad}}</td>
+                     <td><button class="btn btn-danger" ng-click="personel(x.personelID)">Çıkış Ver</button></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+</html>
